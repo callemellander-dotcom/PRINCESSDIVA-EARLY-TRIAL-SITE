@@ -1,1 +1,0 @@
-Place logo PNGs here and keep filenames or update index.html accordingly.
