@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sites | PRINCESS-DIVA Trial</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <h1 id="trial-name">PRINCESS-DIVA Trial</h1>
+    <p id="trial-subtitle">
+      Parallel-group Randomized clinical trial comparing the Incidence of catheter-related complications in
+      Midline catheters versus Central venous catheters in Difficult Intravenous Access patients (PRINCESS DIVA)
+    </p>
+  </div>
+
+  <div class="patient-card">
+    <div class="patient-card-number" id="patient-number">0</div>
+    <div class="patient-card-label">Patients Included</div>
+  </div>
+</header>
+
+
+<nav class="navbar">
+  <ul class="menu">
+    <li class="dropdown">Main Study
+      <ul class="dropdown-menu">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="scope.html">Scope</a></li>
+        <li><a href="#">Protocol</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">The Team
+      <ul class="dropdown-menu">
+        <li><a href="investigators.html">Investigators</a></li>
+        <li><a href="sites.html">Sites</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">News
+      <ul class="dropdown-menu">
+        <li><a href="news.html">Latest</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Documents
+      <ul class="dropdown-menu">
+        <li><a href="documents.html">Latest documents</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Contact
+      <ul class="dropdown-menu">
+        <li><a href="contact.html">Email</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Admin
+      <ul class="dropdown-menu">
+        <li><a href="admin.html">Admin Dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+<main class="section">
+  <h2>Participating Sites</h2>
+
+  <div class="site-grid">
+    <div class="site-card">
+      <h3>Länssjukhuset Ryhov</h3>
+      <p><strong>City:</strong> Jönköping</p>
+      <p><strong>Address:</strong> Sjukhusgatan, 551 85 Jönköping</p>
+      <p><strong>Department:</strong> Operations- och Intensivvårdskliniken</p>
+      <p><strong>Local PI:</strong> <em>To be added</em></p>
+      <p><strong>Contact person:</strong> <em>To be added</em></p>
+      <a class="button button-outline" href="ryhov.html">Open site page</a>
+    </div>
+
+    <div class="site-card">
+      <h3>Sahlgrenska Universitetssjukhuset</h3>
+      <p><strong>City:</strong> Göteborg</p>
+      <p><strong>Address:</strong> Per Dubbsgatan 15, 413 46 Göteborg</p>
+      <p><strong>Department:</strong> Operations- och Intensivvårdskliniken</p>
+      <p><strong>Local PI:</strong> <em>To be added</em></p>
+      <p><strong>Contact person:</strong> <em>To be added</em></p>
+      <a class="button button-outline" href="sahlgrenska.html">Open site page</a>
+    </div>
+
+    <div class="site-card">
+      <h3>Mölndals Sjukhus</h3>
+      <p><strong>City:</strong> Mölndal</p>
+      <p><strong>Address:</strong> Göteborgsvägen 31, 431 30 Mölndal</p>
+      <p><strong>Department:</strong> Operations- och Intensivvårdskliniken</p>
+      <p><strong>Local PI:</strong> <em>To be added</em></p>
+      <p><strong>Contact person:</strong> <em>To be added</em></p>
+      <a class="button button-outline" href="molndal.html">Open site page</a>
+    </div>
+
+    <div class="site-card">
+      <h3>Södersjukhuset</h3>
+      <p><strong>City:</strong> Stockholm</p>
+      <p><strong>Address:</strong> Sjukhusbacken 10, 118 61 Stockholm</p>
+      <p><strong>Department:</strong> Operations- och Intensivvårdskliniken</p>
+      <p><strong>Local PI:</strong> <em>To be added</em></p>
+      <p><strong>Contact person:</strong> <em>To be added</em></p>
+      <a class="button button-outline" href="sodersjukhuset.html">Open site page</a>
+    </div>
+
+    <div class="site-card">
+      <h3>Universitetssjukhuset i Linköping</h3>
+      <p><strong>City:</strong> Linköping</p>
+      <p><strong>Address:</strong> Garnisonsvägen 17, 581 85 Linköping</p>
+      <p><strong>Department:</strong> Operations- och Intensivvårdskliniken</p>
+      <p><strong>Local PI:</strong> <em>To be added</em></p>
+      <p><strong>Contact person:</strong> <em>To be added</em></p>
+      <a class="button button-outline" href="linkoping.html">Open site page</a>
+    </div>
+  </div>
+
+  <h2 style="margin-top:2rem;">Map of all sites</h2>
+  <div id="all-sites-map" class="map"></div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const sites = [
+    { name: "Länssjukhuset Ryhov", page: "ryhov.html", lat: 57.7816, lng: 14.1666, intro: "Click to open the site page." },
+    { name: "Mölndal Sjukhus", page: "molndal.html", lat: 57.6573, lng: 12.0135, intro: "Click to open the site page." },
+    { name: "Sahlgrenska Universitetssjukhuset", page: "sahlgrenska.html", lat: 57.6833, lng: 11.9650, intro: "Click to open the site page." },
+    { name: "Södersjukhuset", page: "sodersjukhuset.html", lat: 59.3086, lng: 18.0777, intro: "Click to open the site page." },
+    { name: "Universitetssjukhuset i Linköping", page: "linkoping.html", lat: 58.4108, lng: 15.6214, intro: "Click to open the site page." },
+  ];
+
+  const map = L.map("all-sites-map").setView([58.7, 14.5], 5.6);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  sites.forEach(s => {
+    const popup = `
+      <strong>${s.name}</strong><br/>
+      ${s.intro}<br/>
+      <a href="${s.page}">Go to site page</a>
+    `;
+    L.marker([s.lat, s.lng]).addTo(map).bindPopup(popup);
+  });
+</script>
+</body>
+</html>

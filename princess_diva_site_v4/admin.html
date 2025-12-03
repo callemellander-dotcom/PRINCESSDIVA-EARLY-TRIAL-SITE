@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | PRINCESS-DIVA Trial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <h1 id="trial-name">PRINCESS-DIVA Trial</h1>
+    <p id="trial-subtitle">
+      Parallel-group Randomized clinical trial comparing the Incidence of catheter-related complications in
+      Midline catheters versus Central venous catheters in Difficult Intravenous Access patients (PRINCESS DIVA)
+    </p>
+  </div>
+
+  <div class="patient-card">
+    <div class="patient-card-number" id="patient-number">0</div>
+    <div class="patient-card-label">Patients Included</div>
+  </div>
+</header>
+
+
+<nav class="navbar">
+  <ul class="menu">
+    <li class="dropdown">Main Study
+      <ul class="dropdown-menu">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="scope.html">Scope</a></li>
+        <li><a href="#">Protocol</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">The Team
+      <ul class="dropdown-menu">
+        <li><a href="investigators.html">Investigators</a></li>
+        <li><a href="sites.html">Sites</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">News
+      <ul class="dropdown-menu">
+        <li><a href="news.html">Latest</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Documents
+      <ul class="dropdown-menu">
+        <li><a href="documents.html">Latest documents</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Contact
+      <ul class="dropdown-menu">
+        <li><a href="contact.html">Email</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">Admin
+      <ul class="dropdown-menu">
+        <li><a href="admin.html">Admin Dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+<main class="section">
+  <h2>Admin Dashboard</h2>
+
+  <div id="login-box" class="admin-box">
+    <p class="muted">Log in to add or edit news items and update patient count. (Static demo using localStorage.)</p>
+    <label class="admin-label">Password</label>
+    <input id="admin-password" class="admin-input" type="password" placeholder="Enter password">
+    <button id="admin-login" class="button" type="button">Log in</button>
+    <p class="muted" style="margin-top:.5rem;">
+      Default password: <code>princessdiva</code>. Change it in <code>admin.js</code>.
+    </p>
+  </div>
+
+  <div id="dashboard" class="admin-box" style="display:none;">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <h3 style="margin:0;">Site settings</h3>
+      <button id="admin-logout" class="button button-outline" type="button">Log out</button>
+    </div>
+
+    <div class="admin-form" style="margin-top:.75rem;">
+      <label class="admin-label">Patients included</label>
+      <input id="patients-count" class="admin-input" type="number" min="0" step="1" placeholder="e.g., 42">
+      <button id="patients-save" class="button" type="button" style="margin-top:.5rem;">Save patient count</button>
+      <p class="muted" style="margin-top:.25rem;">This updates the banner counter on all pages.</p>
+    </div>
+
+    <hr style="margin:1.25rem 0; border:none; border-top:1px solid var(--border);" />
+
+    <h3 style="margin-top:0;">Manage news</h3>
+    <form id="news-form" class="admin-form">
+      <input type="hidden" id="news-id">
+      <label class="admin-label">Title</label>
+      <input id="news-title" class="admin-input" type="text" required>
+
+      <label class="admin-label">Date</label>
+      <input id="news-date" class="admin-input" type="date" required>
+
+      <label class="admin-label">Body</label>
+      <textarea id="news-body" class="admin-input" rows="4" required></textarea>
+
+      <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
+        <button class="button" type="submit">Save news item</button>
+        <button id="news-cancel" class="button button-outline" type="button" style="display:none;">Cancel edit</button>
+      </div>
+    </form>
+
+    <h3>Existing items</h3>
+    <div id="admin-news-list" class="news-feed"></div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+<script src="news.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
