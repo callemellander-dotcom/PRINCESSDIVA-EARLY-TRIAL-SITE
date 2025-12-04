@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+<rect width="300" height="300" fill="#f0f0f0"/>
+<circle cx="150" cy="115" r="55" fill="#d0d0d0"/>
+<rect x="70" y="180" width="160" height="80" rx="40" fill="#d0d0d0"/>
+<text x="150" y="285" font-size="20" text-anchor="middle" fill="#888">Add portrait in assets/investigators/</text>
+</svg>

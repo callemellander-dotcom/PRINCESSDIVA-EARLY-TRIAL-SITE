@@ -1,0 +1,386 @@
+:root {
+  --orange: #f28c28;
+  --blue: #add8e6;
+  --text: #1a1a1a;
+  --card: #ffffff;
+  --border: #e6e6e6;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: white;
+}
+
+/* Top header banner */
+.topbar {
+  background: var(--orange);
+  padding: 1.2rem 1.5rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.topbar-left { max-width: 900px; }
+
+#trial-name {
+  margin: 0 0 0.4rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#trial-subtitle {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Patient count card */
+.patient-card {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  min-width: 150px;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+.patient-card-number { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.patient-card-label { margin-top: 0.25rem; font-size: 0.95rem; letter-spacing: 0.3px; }
+
+/* Nav */
+.navbar { background: var(--blue); padding: 0.6rem 1rem; }
+
+.menu {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+}
+.menu > li { position: relative; cursor: pointer; font-weight: 600; }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 0; margin: 0;
+  border: 1px solid var(--border);
+  min-width: 190px;
+  z-index: 10;
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li a {
+  display: block; padding: 0.55rem 0.9rem; text-decoration: none; color: #333; font-weight: 500;
+}
+.dropdown-menu li a:hover { background: #f7f7f7; }
+
+/* Main / hero */
+main { padding-bottom: 3rem; }
+
+.hero { padding: 2.2rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+.hero h2 { font-size: 1.8rem; margin: 0 0 0.6rem 0; }
+.hero p { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1rem 0; }
+.hero-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+
+.button {
+  display: inline-block; padding: 0.65rem 1rem; border-radius: 10px;
+  background: var(--orange); color: white; text-decoration: none; font-weight: 700;
+  border: 2px solid var(--orange);
+}
+.button-outline { background: transparent; color: var(--orange); }
+
+/* Section layouts */
+.section { padding: 2rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { margin-top: 0; }
+
+/* News */
+.news-section, .news-feed { max-width: 1000px; margin: 0 auto; }
+.news-feed { display: flex; flex-direction: column; gap: 1rem; }
+.news-item { padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
+.news-item h3 { margin: 0 0 .25rem 0; }
+
+/* Sites list cards */
+.site-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; margin-top: 1rem;
+}
+.site-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem; background: var(--card); }
+.site-card h3 { margin-top: 0; }
+
+/* Investigators */
+.people-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; margin-top: 1rem;
+}
+.person-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  background: var(--card);
+}
+.portrait {
+  width: 140px; height: 140px; border-radius: 50%;
+  background: #eee; margin: 0 auto 0.75rem auto;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:#666;
+}
+.role { font-weight: 800; margin-bottom: 0.3rem; }
+
+/* Admin */
+.admin-box {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+}
+.admin-label { display:block; font-weight:700; margin:.5rem 0 .25rem; }
+.admin-input {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.admin-form { margin-top: .5rem; }
+
+/* Logos */
+.logos-section { padding-top: 1rem; }
+.logos-row {
+  display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center;
+}
+.logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  background: white;
+  padding: .25rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* Map */
+.map {
+  height: 420px; width: 100%;
+  border: 1px solid var(--border); border-radius: 10px; margin-top: 1rem;
+}
+
+.muted { color: #666; }
+
+
+/* -------------------- Language switcher (bottom-right flags) -------------------- */
+.lang-switcher {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 9999;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 6px 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+}
+
+.lang-flag-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.1s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-flag-btn:hover {
+  transform: translateY(-1px);
+  border-color: #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.lang-flag-btn.active {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px rgba(242,140,40,0.25);
+}
+
+/* -------------------- Homepage footer logos -------------------- */
+.homepage-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.homepage-footer .footer-logos {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.homepage-footer img {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+
+.lang-flag-btn img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;}
+
+
+/* Investigator portraits */
+.portrait-img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#eee;
+  margin-bottom:0.5rem;
+  border:2px solid #fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+
+/* ===== New banner dropdown (reliable everywhere) ===== */
+
+.navbar.main-nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 0.25rem 1rem;
+}
+
+.navbar .nav-toggle{
+  display: none;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navbar .nav-list{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-item a,
+.navbar .dropdown-trigger{
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.navbar .nav-item a:hover,
+.navbar .dropdown-trigger:hover{
+  background: #f5f5f5;
+}
+
+.navbar .has-dropdown{
+  position: relative;
+}
+
+.navbar .caret{
+  font-size: 0.8em;
+  transform: translateY(1px);
+}
+
+/* Dropdown menu */
+.navbar .dropdown-menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 0.35rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  display: none;
+}
+
+.navbar .dropdown-menu li{
+  list-style: none;
+}
+
+.navbar .dropdown-menu a{
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.navbar .dropdown-menu a:hover{
+  background: #f5f5f5;
+}
+
+/* Open state */
+.navbar .has-dropdown.open > .dropdown-menu{
+  display: block;
+}
+
+/* Desktop hover ALSO opens */
+@media (hover:hover){
+  .navbar .has-dropdown:hover > .dropdown-menu{
+    display: block;
+  }
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .navbar .nav-toggle{ display:block; }
+  .navbar.main-nav{
+    position: relative;
+  }
+  .navbar .nav-list{
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 0;
+    display: none;
+  }
+  .navbar.main-nav.open .nav-list{
+    display: flex;
+  }
+
+  .navbar .has-dropdown{ width:100%; }
+
+  .navbar .dropdown-menu{
+    position: static;
+    display: none;
+    box-shadow: none;
+    border: 0;
+    padding: 0 0 0.5rem 0.5rem;
+  }
+  .navbar .has-dropdown.open > .dropdown-menu{
+    display: block;
+  }
+}
